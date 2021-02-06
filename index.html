@@ -9,14 +9,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
-    <form action="" class="login">
+    <form id="myform" class="login">
         <i class="fas fa-user-circle fa-4x"></i>
         <h1>Cmail 登入</h1>
         <h2>帳號</h2>
-        <input type="text" placeholder="請輸入帳號">
+        <input id="AccountInput" type="text" placeholder="example@gmail.com">
         <h2>密碼</h2>
-        <input type="password" placeholder="請輸入密碼">
-        <button type="submit">登入</button>
+        <input id="PasswordInput" type="password" placeholder="請輸入密碼">
+        <button id="SubmitButton" type="submit">登入</button>
     </form>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+    <script>
+        let form = document.getElementById("myform")
+        let accInput = document.getElementById("AccountInput")
+        let pwdInput = document.getElementById("PasswordInput")
+        let button = document.getElementById("SubmitButton")
+
+        firebase.initializeApp({
+            apiKey: "AIzaSyDDceZmdAzX9TDQaoYaKR8vCncm228zf84",
+            authDomain: "security-project-cmail.firebaseapp.com"
+        });
+        
+        button.addEventListener("click", function (e) {
+            let user = {
+                email: accInput.value,
+                pwd: pwdInput.value
+            };
+            e.preventDefault();
+            firebase.auth().signInWithEmailAndPassword(user.email, user.pwd)
+                .then(() => {
+                    let newuser = firebase.auth().currentUser;
+                    if (newuser) {
+                        console.log("Login successfully")
+                        window.location.href = "main.html"
+                    }
+                })
+                .catch((err) => {
+                    if (err.message === "The email address is badly formatted.") {
+                        if (accInput.value === "")
+                            alert("請輸入帳號")
+                        else
+                            alert("格式錯誤")
+                    } else if (err.message === "There is no user record corresponding to this identifier. The user may have been deleted.") {
+                        alert("無此用戶")
+                    } else if (err.message === "The password is invalid or the user does not have a password.") {
+                        alert("密碼錯誤")
+                    }
+                });
+        });
+    </Script>
 </body>
 </html>

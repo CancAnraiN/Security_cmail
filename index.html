@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
+
 <body>
     <form id="myform" class="login">
         <i class="fas fa-user-circle fa-4x"></i>
@@ -30,7 +32,7 @@
             apiKey: "AIzaSyDDceZmdAzX9TDQaoYaKR8vCncm228zf84",
             authDomain: "security-project-cmail.firebaseapp.com"
         });
-        
+
         button.addEventListener("click", function (e) {
             let user = {
                 email: accInput.value,
@@ -42,7 +44,7 @@
                     let newuser = firebase.auth().currentUser;
                     if (newuser) {
                         console.log("Login successfully")
-                        window.location.href = "main.html"
+                        window.location.href = "/main.html"
                     }
                 })
                 .catch((err) => {
@@ -60,4 +62,5 @@
         });
     </Script>
 </body>
+
 </html>

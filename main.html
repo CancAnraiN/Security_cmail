@@ -1,35 +1,149 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <style></style>
-        <title>Cmail</title>
-    </head>
-    <body>
-        <div><h1>Cmail</h1></div>
-        <div><input type="text"> 搜尋 寫信 標題解密 重新整理 登出</div>
-        <table>
-            <tr>
-                <th>Index</th>
-                <th>主旨</th>
-                <th>寄件者</th>
-                <th>時間</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>aaa</td>
-                <td>chrispaul@gmail.com"</td>
-                <td>FRI MON 22:16:35 CST 2021</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>bbb</td>
-                <td>happyending63427@gmail.com"</td>
-                <td>FRI MON 08:03:51 CST 2021</td>
-            </tr>
-        </table>
-        <div>內文解密</div>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Cmail</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="">Cmail</h1>
+            </div>
+        </div>
+        <nav class="row">
+            <ul class="nav col-12 mb-3 align-items-center">
+                <div class="col-6 ml-auto d-flex">
+                    <input type="text" class="mr-3">
+                    <button type="submit" class="rounded">搜尋</button>
+                </div>
+                <li class="nav-item">
+                    <a href="" class="nav-link">寫信</a>
+                </li>
+                <li class="nav-item"><a href="" class="nav-link btn btn-warning mr-3">標題解密</a></li>
+                <li class="nav-item"><a href="" class="nav-link btn btn-danger">重新整理</a></li>
+                <li class="nav-item"><a href="" class="nav-link">登出</a></li>
+            </ul>
+        </nav>
+        <div class="row align-items-center">
+            <div class="col-12">
+                <nav class="navbar navbar-light ">
+                    <div class="container-fluid">
+                        <form class="nav-input d-flex align-items-center">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">搜尋</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="row item-wrap mx-3">
+                    <div class="col-2">
+                        <p class="happy">index</p>
+                    </div>
+                    <div class="col-4">
+                        <p>主旨</p>
+                    </div>
+                    <div class="col-3">
+                        <p>寄件者</p>
+                    </div>
+                    <div class="col-3">
+                        <p>時間</p>
+                    </div>
+                </div>
+                <div class="row item-wrap mx-3">
+                    <div class="col-2">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-4">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                </div>
+                <div class="row item-wrap mx-3">
+                    <div class="col-2">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-4">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                </div>
+                <div class="row item-wrap mx-3">
+                    <div class="col-2">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-4">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                </div>
+                <div class="row item-wrap mx-3">
+                    <div class="col-2">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-4">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                    <div class="col-3">
+                        <p>xxxxxx</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <section>
+                    <div class="border border-dark rounded mx-3">
+                        <textarea name="abc" id="abc"></textarea>
+                    </div>
+
+
+                </section>
+
+            </div>
+            <div class="col-4">
+                <section>
+                    <button>內文解密</button>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let happy = (e) => {
+        e.preventDefault();
+        console.log("happy!");
+    }
+</script>
+
 </html>

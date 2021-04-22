@@ -41,21 +41,21 @@
     <script>
         const provider = new firebase.auth.GoogleAuthProvider();
         let button = document.getElementById("SubmitButton")
-        button.addEventListener("click", () => {
-            firebase.auth()
-                .signInWithPopup(provider)
-                .then((result) => {
-                    let credential = result.credential;
-                    let token = credential.accessToken;
-                    let user = result.user;
-                    console.log("🚀 ~ file: main.js ~ line 70 ~ .then ~ user", user)
-                }).catch((error) => {
-                    let errorCode = error.code;
-                    let errorMessage = error.message;
-                    let email = error.email;
-                    let credential = error.credential;
-                });
-        });
+        // button.addEventListener("click", () => {
+        //     firebase.auth()
+        //         .signInWithPopup(provider)
+        //         .then((result) => {
+        //             let credential = result.credential;
+        //             let token = credential.accessToken;
+        //             let user = result.user;
+        //             console.log("🚀 ~ file: main.js ~ line 70 ~ .then ~ user", user)
+        //         }).catch((error) => {
+        //             let errorCode = error.code;
+        //             let errorMessage = error.message;
+        //             let email = error.email;
+        //             let credential = error.credential;
+        //         });
+        // });
 
     </Script>
 

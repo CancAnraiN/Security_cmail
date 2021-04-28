@@ -17,13 +17,10 @@
         <button id="SubmitButton" type="submit">登入</button>
     </form>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
             apiKey: "AIzaSyAy02ydvSNjQxncVSbCm6SqSMfC6uJi2gQ",
             authDomain: "security-project-cmail.firebaseapp.com",
@@ -34,13 +31,15 @@
             appId: "1:1020925604371:web:14f6f5689e671261e5c5e6",
             measurementId: "G-XXZR59KCQ2"
         };
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
 
     <script>
-        const provider = new firebase.auth.GoogleAuthProvider();
+        // const provider = new firebase.auth.GoogleAuthProvider();
         let button = document.getElementById("SubmitButton")
+        button.addEventListener("click", () => {
+            document.location.href = "https://google.com"
+        })
         // button.addEventListener("click", () => {
         //     firebase.auth()
         //         .signInWithPopup(provider)
